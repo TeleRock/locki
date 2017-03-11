@@ -1,4 +1,4 @@
-#[Tablighchi](http://telegram.me/telediamondch)
+
 
 ستاره فراموش نشه
 
@@ -67,7 +67,7 @@ screen ./tabchi-1.sh
 ابتدا کد زیر را وارد کنید
 
 ```
-python3 creator.py
+lua creator.lua
 ```
 
 سپس شماره دلخواه که تکراری نباشه
