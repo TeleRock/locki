@@ -98,8 +98,8 @@ cd locki
 
 ./locki.sh
 ```
-:نمایش دستورات در گروه
-help
+help :نمایش دستورات در گروه
+
 
 #Opened By: [@Iocki](http://telegram.me/Iocki)
 
