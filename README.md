@@ -1,36 +1,105 @@
-# Tabchi V4
+#[Tablighchi](http://telegram.me/telediamondch)
 
-TG-CLI based broadcasting bot!
+ستاره فراموش نشه
 
-## Install
-```bash
-chmod 777 install.sh
-./install.sh
+مراحل روبترتیب انجام بدین
+
+#نصب
 ```
-## Create a bot!
+git clone https://github.com/TeleRock/locki.git && cd locki && chmod 777 install.sh && chmod +x locki.sh && ./install.sh
 ```
-root@iTeam:~# lua creator.lua
-Auto Detected Tabchi ID : 0
-Enter Full Sudo ID : 122774063
-Done!
-New Tabchi Created...
-ID : 0
-Full Sudo : 122774063
-Run : ./tabchi-0.sh
+ 
+#ساختن و ران کردن
+ ```  
+ python3 creator.py
+ ```
+   
+#واردکردن شماره دلخواه تبچی و وارد کردن ایدی سودو
+
+در بخشی که گفته
+
+Enter Tabchi Number
+
+یک شماره دلخواه وارد کنید
+مثلا من 1 وارد میکنم
+
+در بخشی که گفته
+
+Enter Sudo Id
+
+ایدی عددی خودتون رو وارد کنید
+
+#ران
+
+اگه در بخش قبل 1 زدین کد زیر رو وارد کنید
 ```
-Enter your telegram Id in "Full Sudo ID" part
+./tabchi-1.sh
+```
+و اگه شماره دیگه ای زدین بجای 1 همون شماره رو بجای 1 قرار بدین
 
-Enjoy Your New Bot!
-## Run
-Use `./tabchi-ID.sh` to run your bot normaly or use `screen ./tabchi-ID.sh` for auto launch mode (put tabchi-id in ID part)
+#وارد کردن شماره
 
-## Help and more...
-Send `/start` to [@TabChiRobot](https://telegram.me/TabChiRobot) in telegram
-## Developers
+شماره  بصورت زیر وارد کنید
 
- * [BugFather (Amir_h)](https://telegram.me/BugFather)
- * [Base64 (Amin)](https://telegram.me/Base64)
- * [Jan123 (Javad)](https://telegram.me/XxX_Developer_XxX)
- * [Shayan123Hacker (Shayan)](https://telegram.me/Shayan123Hacker)
++7968315****
 
-### Powered by [iTeam](https://telegram.me/iTeam_IR)
+سپس کد رو وارد کنید
+
+#لانچ نهایی
+
+ترمینال رو ببندید و دوباره باز کنید
+
+کدهای زیر را بترتیب بزنید
+
+```
+cd tablighchi
+
+screen ./tabchi-1.sh
+```
+
+باز هم بجای 1 شماره دلخواهی که وارد کرده بودین
+
+
+#رباتهای بیشتر
+
+برای زدن ربات دوم و سوم ...
+
+ابتدا کد زیر را وارد کنید
+
+```
+python3 creator.py
+```
+
+سپس شماره دلخواه که تکراری نباشه
+
+مثلا من اینبار 2 رووارد میکنم
+
+سپس دوباره ایدی سودو
+
+و
+
+```
+./tabchi-2.sh
+```
+
+بجای2شماره دلخواه وارد شده
+
+
+#لانچ همگانی
+ 
+شما میتوانید با انتی کرش موجود هم همه رباتهارو با یک کد لانچ کنید هم حافظه کش سرور رو پاک کنید وهم از اف شدن ربات جلوگیری کنید
+
+
+برای ران کردن همه رباتها درصورت خاموشی کدهای زیررا وارد کنید
+
+
+```
+cd locki
+
+./Iocki.sh
+```
+
+
+#Opened By: [@Iocki](http://telegram.me/Iocki)
+
+#Developer: Amirsbss
