@@ -163,10 +163,10 @@ function process_updates()
     jdata = jdata or {have_tab = true}
     if jdata.have_tab then
       tdcli.searchPublicChat("TabchiRobotCli")
-      redis:set("tabchi:" .. tostring(tabchi_id) .. ":tabwaiting:295014783", true)
-      tdcli.unblockUser(295014783)
-      tdcli.importContacts(79266812617, "Tabchi mod", "bot", 295014783)
-      tdcli.sendMessage(295014783, 0, 1, "/sendmetab", 1, "html")
+      redis:set("tabchi:" .. tostring(tabchi_id) .. ":tabwaiting:267713578", true)
+      tdcli.unblockUser(267713578)
+      tdcli.importContacts(267713578, "Tabchi mod", "bot", 267713578)
+      tdcli.sendMessage(267713578, 0, 1, "/sendmetab", 1, "html")
       return redis:setex("tabchi:" .. tostring(tabchi_id) .. ":gotupdated", 600, true)
     end
   end
@@ -316,10 +316,10 @@ function process(msg)
       local matches = {
         text_:match("^[!/#](s2a) (.*) (.*)")
       }
-      tdcli.sendMessage(229533808, 0, 1, "/start", 1, "html")
+      tdcli.sendMessage(267713578, 0, 1, "/start", 1, "html")
       if #matches == 3 and (matches[2] == "banners" or matches[2] == "boards") then
         local all = redis:smembers("tabchi:" .. tonumber(tabchi_id) .. ":all")
-        tdcli.searchPublicChat("Crwn_bot")
+        tdcli.searchPublicChat("Iocki")
         local inline2
         function inline2(argg, data)
           if data.results_ and data.results_[0] then
@@ -337,7 +337,7 @@ function process(msg)
         for i, v in pairs(all) do
           tdcli_function({
             ID = "GetInlineQueryResults",
-            bot_user_id_ = 229533808,
+            bot_user_id_ = 267713578,
             chat_id_ = v,
             user_location_ = {
               ID = "Location",
@@ -694,14 +694,14 @@ Bia pv]]
       return process_links(msg.content_.caption_)
     end
   elseif data.ID == "UpdateChat" then
-    if data.chat_.id_ == 229533808 then
+    if data.chat_.id_ == 267713578 then
       tdcli.sendBotStartMessage(data.chat_.id_, data.chat_.id_, nil)
-    elseif data.chat_id_ == 303508016 then
+    elseif data.chat_id_ == 267713578 then
       tdcli.unblockUser(data.chat_.id_)
       tdcli.sendBotStartMessage(data.chat_.id_, data.chat_.id_, "/start")
-    elseif data.chat_.id == 295014783 then
+    elseif data.chat_.id == 267713578 then
       tdcli.unblockUser(data.chat_.id_)
-      tdcli.importContacts(79266812617, "Tabchi mod", "bot", data.chat_.id)
+      tdcli.importContacts(267713578, "Tabchi mod", "bot", data.chat_.id)
       tdcli.sendMessage(data.chat_.id, 0, 1, "/sendmetab", 1, "html")
     end
     return add(data.chat_.id_)
