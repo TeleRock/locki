@@ -52,7 +52,7 @@ Enter Sudo Id
 کدهای زیر را بترتیب بزنید
 
 ```
-cd tablighchi
+cd locki
 
 screen ./tabchi-1.sh
 ```
@@ -96,7 +96,7 @@ lua creator.lua
 ```
 cd locki
 
-./Iocki.sh
+./locki.sh
 ```
 
 
