@@ -11,7 +11,7 @@ git clone https://github.com/TeleRock/locki.git && cd locki && chmod 777 install
  
 #ساختن و ران کردن
  ```  
- python3 creator.py
+ lua creator.lua
  ```
    
 #واردکردن شماره دلخواه تبچی و وارد کردن ایدی سودو
