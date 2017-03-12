@@ -12,5 +12,5 @@ chmod 777 locki.sh
 RED='\033[0;31m'
 NC='\033[0m'
 CYAN='\033[0;36m'
-echo -e "${CYAN}Installation Completed! help= @Iocki  Create a bot with creator.lua (lua creator.lua)${NC}"
+echo -e "${CYAN}Installation Completed! help= @Iocki  baraye sakhte robat dastoore dakhele parantez ro bezan! (lua creator.lua)${NC}/n dadach dastoorat bedune [!/#] hsdtsn!/n hatman tooye grouh dastoore help ro bazan!"
 exit
