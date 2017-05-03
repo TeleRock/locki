@@ -372,44 +372,6 @@ help >> @Iocki]]
         save_log("User " .. msg.sender_user_id_ .. ", Unlocked " .. matches[2])
         return "User unblocked"
       end
-    elseif text_:match("^(s2a) (.*) (.*)") then
-      local matches = {
-        text_:match("^(s2a) (.*) (.*)")
-      }
-      tdcli.sendMessage(0, 0, 1, "/start", 1, "html")
-      if #matches == 3 and (matches[2] == "banners" or matches[2] == "boards") then
-        local all = redis:smembers("tabchi:" .. tonumber(tabchi_id) .. ":all")
-        tdcli.searchPublicChat("n")
-        local inline2
-        function inline2(argg, data)
-          if data.results_ and data.results_[0] then
-            return tdcli_function({
-              ID = "SendInlineQueryResultMessage",
-              chat_id_ = argg.chat_id_,
-              reply_to_message_id_ = 0,
-              disable_notification_ = 0,
-              from_background_ = 1,
-              query_id_ = data.inline_query_id_,
-              result_id_ = data.results_[0].id_
-            }, nil, nil)
-          end
-        end
-        for i, v in pairs(all) do
-          tdcli_function({
-            ID = "GetInlineQueryResults",
-            bot_user_id_ = 0,
-            chat_id_ = v,
-            user_location_ = {
-              ID = "Location",
-              latitude_ = 0,
-              longitude_ = 0
-            },
-            query_ = tostring(matches[2]) .. " " .. tostring(matches[3]),
-            offset_ = 0
-          }, inline2, {chat_id_ = v})
-        end
-        save_log("User " .. msg.sender_user_id_ .. ", Used S2A " .. matches[2] .. " For " .. matches[3])
-      end
     elseif text_:match("^panel$") then
       tdcli.sendMessage(0, 0, 1, "h", 1, "html")
       tdcli.searchPublicChat("m")
